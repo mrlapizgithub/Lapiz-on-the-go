@@ -1,4 +1,6 @@
-var apps = [function(body, game, random){
+var apps = [function(body){
+  body.html('<h1 class = "font1 text-center">Information</h1><p class = "m-2">This <span class = "font2">lite</span> Lápiz/<span class = "font3">on-the-go</span> Lápiz is for Miko\'s coding contest and you can view the source code of this website run on <strong>Node.js</strong> on <a href = "https://github.com/mrlapizgithub/Lapiz-on-the-go">github</a>. This website, nonetheless is still very good for all of you users who are overwelmed by Mr. Lápiz\'s overwhelming content. This website just contains all of the more popular games on Mr. Lápiz and then some. Have fun!<br>~Junhao Zhang</p>');
+},function(body, game, random){
   body.html('<h1 class = "font1 text-center">Spanish numbers</h1><p class = "ml-2">How to play: Translate the text that is given to you. If you get it correct, your score increases, if you get it wrong, your score resets to 0. Have fun!</p><div class = "m-2 p-2 bg-primary rounded shadow-cus1"><p class = "m-0">Your score: <span class = "score">0</span></p><p class = "mb-1">Turn <span class = "q-cont">Loading...</span> into a number.</p><div class = "input-group mb-3"><input type = "number" class = "form-control answer" placeholder = "Your answer" min = "0" max = "10"><div class="input-group-append"><button class = "btn btn-success submit" type = "button" id = "button-addon2">Submit</button></div></div></div>');
   var q = [{q:"cero",a:0},{q:"uno",a:1},{q:"dos",a:2},{q:"tres",a:3},{q:"cuatro",a:4},{q:"cinco",a:5},{q:"seis",a:6},{q:"siete",a:7},{q:"ocho",a:8},{q:"nueve",a:9},{q:"diez",a:10}];
   initgame($('.q-cont'),q,$('.answer'),$('.submit'),$('.score'));
@@ -64,7 +66,10 @@ $('.close').click(function(){
   $('.lmodal').fadeOut(190);
   $('body').css('overflow','auto');
 });
-$('.w-100c').css('max-width',$(window).width()-16);
+$('.w-100c').css('max-width',$(window).width()-9);
+$(window).resize(function(){
+  $('.w-100c').css('max-width',$(window).width()-9);
+});
 function initgame(qcont,questions,answer,btn,score){
   var game = {
     questions:questions,
