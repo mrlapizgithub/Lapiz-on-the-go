@@ -1,0 +1,53 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+html{
+  font-family: 'Be Vietnam', sans-serif;
+  min-height: 100%;
+  position:relative;
+}
+body {
+  margin: 0 0 110px;
+}
+footer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.shadow-cus{
+  box-shadow:0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.shadow-cus1{
+  box-shadow:0 0 4px rgba(0, 0, 0, 0.3);
+}
+.font1{
+  font-family: 'Squada One', cursive;
+}
+.font2{
+  font-family: 'Be Vietnam', sans-serif;
+}
+.font3{
+  font-family: 'Bangers', cursive;
+}
+.hide{display:none;}
+.lmodal{
+  position:fixed;
+  background:#fff;
+  width:100%;
+  height:100%;
+  margin:0;
+  top:0;
+  left:0;
+  text-align:center;
+  overflow:auto;
+  z-index:99;
+}
+.close:focus{
+  outline:0 none;
+}
+::selection{
+  background:rgba(0, 0, 0, 0.6969);
+  color:#fff;
+}
