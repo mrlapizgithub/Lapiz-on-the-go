@@ -34,6 +34,31 @@ var apps = [function(body, game, random){
       $('.submit').trigger("click");
     }
   });
+},function(body, game, random){
+  body.html('<h1 class = "font1 text-center">Number Guesser <sup>-1</sup></h1><p class = "ml-2">How to play: You have to pick a number from 1-(a number 2-10). Then, the robot guesses and if he gets it correct, your score increases, if you get it wrong, your score decreases. Have fun!</p><div class = "m-2 p-2 bg-primary rounded shadow-cus1"><p class = "m-0">Your score: <span class = "score">0</span></p><p class = "mb-1">You are thinking of a number from 1-<span class = "q-num">2</span>. Choose the number.</p><div class = "input-group mb-3"><input type = "number" class = "form-control answer" min = "1" max = "20"><div class="input-group-append"><button class = "btn btn-success submit" type = "button" id = "button-addon2">Submit</button></div></div></div>');
+  var range = random(2,10);
+  var robotguess = random(1,range);
+  var score = 0;
+  $('.q-num').html(range);
+  $('.submit').click(function(){
+    if($('.answer').val()==robotguess){
+      score+=range;
+      $('.score').html(score);
+    }else{
+      score--;
+      $('.score').html(score);
+      alert("The robot guessed "+robotguess+"!");
+    }
+    range = random(2,10);
+    robotguess = random(1,range);
+    $('.q-num').html(range);
+    $('.answer').val("");
+  });
+  $('.answer').keypress(function(e){
+    if(e.which==13){
+      $('.submit').trigger("click");
+    }
+  });  
 }];
 $('.close').click(function(){
   $('.lmodal').fadeOut(190);
